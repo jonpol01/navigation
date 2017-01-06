@@ -115,6 +115,9 @@ void StepbackRecovery::runBehavior(){
 
     //check if that velocity is legal by forward simulating
     double sim_angle = 0.0;
+
+    
+
     while(sim_angle < dist_left){
       double theta = tf::getYaw(global_pose.getRotation()) + sim_angle;
 
