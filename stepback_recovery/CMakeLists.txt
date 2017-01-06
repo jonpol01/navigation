@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rotate_recovery)
+project(stepback_recovery)
 
 find_package(catkin REQUIRED
         COMPONENTS
@@ -22,21 +22,21 @@ add_definitions(${EIGEN3_DEFINITIONS})
 
 catkin_package(
     INCLUDE_DIRS include
-    LIBRARIES rotate_recovery
+    LIBRARIES stepback_recovery
     CATKIN_DEPENDS
         roscpp
         pluginlib
 )
 
-add_library(rotate_recovery src/rotate_recovery.cpp)
-target_link_libraries(rotate_recovery ${catkin_LIBRARIES})
+add_library(stepback_recovery src/stepback_recovery.cpp)
+target_link_libraries(stepback_recovery ${catkin_LIBRARIES})
 
-install(TARGETS rotate_recovery
+install(TARGETS stepback_recovery
        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        )
 
-install(FILES rotate_plugin.xml
+install(FILES stepback_plugin.xml
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
